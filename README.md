@@ -1,4 +1,4 @@
-To run locally
+To run locally :
 
 - Clone the repo
 
