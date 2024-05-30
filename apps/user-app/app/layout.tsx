@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <HydrationOverlay>
+
       <html lang="en">
       <Providers>
         <body className={inter.className}>
@@ -30,7 +30,7 @@ export default function RootLayout({
         </body>
       </Providers>
       </html>
-    </HydrationOverlay>
+  
     
   );
 }
