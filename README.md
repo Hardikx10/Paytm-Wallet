@@ -1,3 +1,5 @@
+To run locally
+
 - Clone the repo
 
 - npm install
