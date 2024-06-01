@@ -8,10 +8,7 @@ export async function p2pTransfer(to: string, amount: number) {
     const session = await getServerSession(authOptions);
     const from = session?.user?.id;
     if (!from) {
-        return {
-            message: "Error while sending"
-            
-        }
+        throw new Error('Error While Sending');
     }
     const toUser = await prisma.user.findFirst({
         where: {
@@ -20,9 +17,7 @@ export async function p2pTransfer(to: string, amount: number) {
     });
 
     if (!toUser) {
-        return {
-            message: "User not found"
-        }
+        throw new Error('User not Found');
     }
     await prisma.$transaction(async (tx) => {
         await tx.$queryRaw`SELECT * FROM "Balance" WHERE "userId" = ${Number(from)} FOR UPDATE`;
