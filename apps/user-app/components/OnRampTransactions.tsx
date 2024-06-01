@@ -20,13 +20,16 @@ export const OnRampTransactions = ({
     }
     return <Card title="Recent Transactions">
         <div className="pt-2">
-            {transactions.reverse().map(t => <div className="flex justify-between">
+            {transactions.reverse().map(t => <div className="flex justify-between border-b border-gray-300">
                 <div>
-                    <div className="text-sm">
+                    <div className="text-sm pt-2">
                         Received INR
                     </div>
                     <div className="text-slate-600 text-xs">
                         {t.time.toDateString()}
+                    </div>
+                    <div className="flex items-center my-4">
+                    
                     </div>
                 </div>
                 <div className="flex flex-col justify-center">
