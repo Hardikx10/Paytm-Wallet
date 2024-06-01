@@ -11,30 +11,37 @@ export default async function() {
         <div className="w-screen">
     <Card title="Recent Transactions">
     <div className="pt-2">
-        {p2pTransactions.reverse().map((t) => (<div className="flex justify-between">
+        {p2pTransactions.reverse().map((t) => (<div className="flex justify-between border-b border-gray-300">
+
+     
             <div>
-                <div className="text-sm">
+                <div className="text-sm pt-2">
                     {t.fromUserId==session.user?.id ? 'Sent' : 'Received'}
                 </div>
                 <div className="text-slate-600 text-xs">
                     {t.timestamp.toDateString()}
+                </div>
+                <div className="flex items-center my-4">
+                    
                 </div>
             </div>
     
             <div className="flex flex-col justify-center text-sm">
 
                 {/* {t.fromUserId==session.user?.id ? {toUserName(t.toUserId)} : {FromUserName( t.fromUserId)}} */}
-                    {t.fromUserId==session.user?.id ? ' to ':' from '}
+                    {t.fromUserId==session.user?.id ? '   to   ':'   from   '}
 
                     {t.fromUserId==session.user?.id ? toUserName(t.toUserId) : FromUserName(t.fromUserId)}
             </div>
             <div className="flex flex-col justify-center">
                 {t.fromUserId==session.user?.id ? '-' : '+'} Rs {t.amount / 100}
             </div>
-
+           
+               
         </div>)
     )
     }
+    
     </div>
 </Card>
 </div>)

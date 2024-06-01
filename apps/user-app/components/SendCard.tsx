@@ -45,12 +45,15 @@ export function SendCard() {
                             <div className="text-green-600 font-bold text-center pt-4">
                                 Transaction successful!
                             </div>
+                          
                         
                         )}
                         
                         {transactionFailed && (
                             <div className="text-red-600 font-bold text-center pt-4">
                                 Transaction Failed
+                              
+
                             </div>
                         )}
                     </div>
