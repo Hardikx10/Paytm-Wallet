@@ -17,10 +17,12 @@ export function SendCard() {
             await p2pTransfer(number, Number(amount) * 100);
             // If the transfer is successful, set transactionSuccess to true
             setTransactionSuccess(true);
+            settransactionFailed(false)
         } catch (e) {
             // Handle error if the transfer fails
             console.log("Transaction failed");
             settransactionFailed(true)
+            setTransactionSuccess(false)
             
             // Optionally, you can also set a state to handle error messages
         }
