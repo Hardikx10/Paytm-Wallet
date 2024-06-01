@@ -6,7 +6,6 @@ import { Card } from "@repo/ui/card";
 import { Center } from "@repo/ui/center";
 import { TextInput } from "@repo/ui/textinput";
 import { p2pTransfer } from "../app/lib/actions/p2pTransfer";
-
 export function SendCard() {
     const [number, setNumber] = useState("");
     const [amount, setAmount] = useState("");
@@ -26,7 +25,6 @@ export function SendCard() {
             // Optionally, you can also set a state to handle error messages
         }
     };
-
     return (
         <div className="h-[90vh]">
             <Center>
