@@ -1,7 +1,7 @@
 import prisma from "@repo/db/client"
 import { getServerSession } from "next-auth"
 import { authOptions } from "../../lib/auth"
-import { table, timeStamp } from "console"
+
 import { Card } from "@repo/ui/card"
 
 export default async function() {
@@ -11,7 +11,7 @@ export default async function() {
         <div className="w-screen">
     <Card title="Recent Transactions">
     <div className="pt-2">
-        {p2pTransactions.reverse().map(t => <div className="flex justify-between">
+        {p2pTransactions.reverse().map((t) => (<div className="flex justify-between">
             <div>
                 <div className="text-sm">
                     {t.fromUserId==session.user?.id ? 'Sent' : 'Received'}
@@ -29,10 +29,12 @@ export default async function() {
                     {t.fromUserId==session.user?.id ? toUserName(t.toUserId) : FromUserName(t.fromUserId)}
             </div>
             <div className="flex flex-col justify-center">
-            {t.fromUserId==session.user?.id ? '-' : '+'} Rs {t.amount / 100}
+                {t.fromUserId==session.user?.id ? '-' : '+'} Rs {t.amount / 100}
             </div>
 
-        </div>)}
+        </div>)
+    )
+    }
     </div>
 </Card>
 </div>)
