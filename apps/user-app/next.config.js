@@ -17,4 +17,8 @@ module.exports = {
 //    * for Next.js apps with pages directory. If you are using the app directory, you should change this to `main`.
 //    */
 //   appRootSelector: "#__next",
+<<<<<<< HEAD
 // })(nextConfig);
+=======
+// })(nextConfig);
+>>>>>>> 47fd519b792fee0e335fd45374edeb9347eb445a
