@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Providers } from "../provider";
 import { AppbarClient } from "../components/AppbarClient";
-import { HydrationOverlay } from "next-hydration-overlay";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }): JSX.Element {
   return (
-    <HydrationOverlay>
+  
       <html lang="en">
       <Providers>
         <body className={inter.className}>

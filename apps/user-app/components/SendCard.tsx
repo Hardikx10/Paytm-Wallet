@@ -6,10 +6,6 @@ import { Card } from "@repo/ui/card";
 import { Center } from "@repo/ui/center";
 import { TextInput } from "@repo/ui/textinput";
 import { p2pTransfer } from "../app/lib/actions/p2pTransfer";
-<<<<<<< HEAD
-
-=======
->>>>>>> 47fd519b792fee0e335fd45374edeb9347eb445a
 export function SendCard() {
     const [number, setNumber] = useState("");
     const [amount, setAmount] = useState("");
@@ -31,10 +27,6 @@ export function SendCard() {
             // Optionally, you can also set a state to handle error messages
         }
     };
-<<<<<<< HEAD
-
-=======
->>>>>>> 47fd519b792fee0e335fd45374edeb9347eb445a
     return (
         <div className="h-[90vh]">
             <Center>
@@ -53,13 +45,9 @@ export function SendCard() {
                             <div className="text-green-600 font-bold text-center pt-4">
                                 Transaction successful!
                             </div>
-<<<<<<< HEAD
                         
                         )}
                         
-=======
-                        )}
->>>>>>> 47fd519b792fee0e335fd45374edeb9347eb445a
                         {transactionFailed && (
                             <div className="text-red-600 font-bold text-center pt-4">
                                 Transaction Failed
