@@ -1,9 +1,19 @@
 import db from "@repo/db/client";
 import CredentialsProvider from "next-auth/providers/credentials"
 import bcrypt from "bcrypt";
+import GitHubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions = {
     providers: [
+        GitHubProvider({
+            clientId: process.env.GITHUB_ID ?? "",
+            clientSecret: process.env.GITHUB_SECRET ?? ""
+        }),
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID ?? "",
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? ""    
+        }),
       CredentialsProvider({
           name: 'Credentials',
           credentials: {
@@ -65,13 +75,31 @@ export const authOptions = {
         })
     ],
     secret: process.env.JWT_SECRET || "secret",
-    callbacks: {
+
+    pages: {
+        signIn: "/signup",
+    },
+
+      callbacks: {
         // TODO: can u fix the type here? Using any is bad
+        async signIn({ user, account, profile }:any) {
+          
+            if (account.provider === "github" || account.provider === "google") {
+              let existingUser = await db.user.findFirst({
+                where: { email: user.email }
+              });
+      
+            }
+           
+            return true;
+          },
         async session({ token, session }: any) {
             session.user.id = token.sub
 
             return session
         }
+
     }
+   
   }
   

@@ -17,7 +17,7 @@ export default async function() {
     
     return <div className="w-screen">
         <div className="text-4xl text-[#6a51a6] pt-8 mb-8 font-bold">
-            {getTime(hour,timeArr[2])} , {session.user?.name}
+            {getTime(hour,timeArr[2])} , {session?.user?.name}
         </div>
     </div>
 }
