@@ -4,6 +4,7 @@
 #### Screenshots of Project
 
 - Home Page
+
 ![paytm home](https://raw.githubusercontent.com/Hardikx10/Paytm-Wallet/master/apps/user-app/public/paytm%20home.png)
 
 - Wallet Page
